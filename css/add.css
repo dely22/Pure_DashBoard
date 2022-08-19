@@ -1,0 +1,118 @@
+.inserto-box {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.inserto-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.inserto-icon {
+    font-size: 1.2rem;
+}
+
+.inserto-inputs {
+    display: grid;
+    row-gap: 2rem;
+    margin-bottom: var(--m-2-5);
+}
+
+.inserto-content {
+    position: relative;
+    height: 3rem;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.drop {
+    border-bottom: none;
+}
+
+.inserto-content span {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    content: '';
+    height: 2px;
+    width: 0;
+    transition: .5s;
+    background: var(--blue);
+}
+
+.inserto-input:focus~span {
+    width: 100%;
+}
+
+.inserto-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem 1rem 1rem 0;
+    background: none;
+    color: var(--dark);
+    outline: none;
+    border: none;
+    z-index: 1;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.inserto-label {
+    position: absolute;
+    top: .40rem;
+    width: 100%;
+    font-size: var(--normal-font-size);
+    transition: .3s;
+    color: var(--blue);
+}
+
+.inserto-area {
+    height: 7rem;
+}
+
+.inserto-area textarea {
+    resize: none;
+}
+
+.inserto-input:focus+.inserto-label {
+    top: -.75rem;
+    left: 0;
+    z-index: 10;
+    color: var(--blue);
+}
+
+@media only screen and (max-width:768px) {
+
+    .inserto-data,
+    .inserto-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .inserto-data {
+        margin-bottom: var(--m-2-5);
+    }
+}
+
+/*========== Reusable css classes ==========*/
+.section .container {
+    padding-top: 2rem;
+    padding-bottom: 4.75rem;
+}
+
+
+.padd-15 {
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+}
+
+/* drop Down */
+select, option {
+    padding: .3rem;
+}
+
+select:hover {
+    display: block;
+}
