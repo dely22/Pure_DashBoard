@@ -9,7 +9,7 @@ $("body").on("click", "#btnExport", function () {
                     width: 500
                 }]
             };
-            pdfMake.createPdf(docDefinition).download("Users In the Site.pdf");
+            pdfMake.createPdf(docDefinition).download("Users.pdf");
         }
     });
 });
@@ -20,7 +20,7 @@ $(document).ready(function() {
         $("#table").table2excel({
             exclude: ".noExport",
             name: "Data",
-            filename: "Users In the Site",
+            filename: "Users",
             columns: [0, 1, 2, 3] // export first three columns
         });
     });
