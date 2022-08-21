@@ -133,7 +133,8 @@ body {
 
 .btns {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 /* SIDEBAR */
@@ -792,4 +793,12 @@ form .form-input button {
 .pagination a:hover:not(.active) {
 	background-color: #ddd;
 	border-radius: .5rem;
+}
+
+/* Export Head */
+.Down {
+	padding: .5rem;
+	color: var(--blue);
+	font-size: 1.2rem;
+
 }

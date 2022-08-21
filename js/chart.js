@@ -37,18 +37,3 @@ xmlhttp.onreadystatechange = function () {
     }
 
 }
-
-//This is JsonData.json
-//{"date_Orders": [
-// {
-// "date": "1941",
-// "Orders": 406760
-// },{
-// "date": "1951",
-// "Orders": 778977
-// },{
-// "date": "1961",
-// "Orders": 1207000
-// }
-// ]
-// }
