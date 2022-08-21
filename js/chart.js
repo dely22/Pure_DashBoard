@@ -1,18 +1,18 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "http://127.0.0.1:5501/pages/jsonData.json";
+var url = "http://127.0.0.1:5501/js/jsonData.json";
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(this.responseText);
         //console.log(data)
-        date = data.date_population.map(function (elem) {
+        date = data.date_Orders.map(function (elem) {
             return elem.date;
         })
-        population = data.date_population.map(function (elem) {
-            return elem.population;
+        Orders = data.date_Orders.map(function (elem) {
+            return elem.Orders;
         })
-        //console.log(population)
+        //console.log(Orders)
 
         const ctx = document.getElementById('canvas').getContext('2d');
         const myChart = new Chart(ctx, {
@@ -20,9 +20,9 @@ xmlhttp.onreadystatechange = function () {
             data: {
                 labels: date,
                 datasets: [{
-                    label: 'Population',
-                    data: population,
-                    backgroundColor: "#ff335e"
+                    label: 'Orders Per Year',
+                    data: Orders,
+                    backgroundColor: "#e2cfff"
 
                 }]
             },
@@ -39,16 +39,16 @@ xmlhttp.onreadystatechange = function () {
 }
 
 //This is JsonData.json
-//{"date_population": [
+//{"date_Orders": [
 // {
 // "date": "1941",
-// "population": 406760
+// "Orders": 406760
 // },{
 // "date": "1951",
-// "population": 778977
+// "Orders": 778977
 // },{
 // "date": "1961",
-// "population": 1207000
+// "Orders": 1207000
 // }
 // ]
 // }
