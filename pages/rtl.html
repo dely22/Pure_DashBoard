@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
     <head>
         <meta charset="UTF-8">
@@ -7,11 +7,10 @@
 
         <!-- Box icons -->
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-        <link rel='stylesheet' href='css/boxicons.min.css'>
+        <link rel='stylesheet' href='../css/boxicons.min.css'>
         <!-- My CSS -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/chart.css">
-        <title>My First Pure Dashboard</title>
+        <link rel="stylesheet" href="../css/rtl.css">
+        <title>أول لوحة تحكم بيو لي</title>
 
     </head>
 
@@ -20,39 +19,39 @@
         <section id="sidebar">
             <a href="#" class="brand">
                 <i class='bx bxs-magic-wand'></i>
-                <span class="text">Admin Hadeel</span>
+                <span class="text">أدمن هديل</span>
             </a>
             <ul class="side-menu top">
                 <li class="active">
                     <a href="#">
                         <i class='bx bxs-dashboard'></i>
-                        <span class="text">Dashboard</span>
+                        <span class="text">لوحة التحكم</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/addUser.html">
+                    <a href="#">
                         <i class='bx bxs-cloud-download'></i>
-                        <span class="text">Add User</span>
+                        <span class="text">اضافة مستخدم</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="pages/users.html">
+                    <a href="#">
                         <i class='bx bxs-group'></i>
-                        <span class="text">Users</span>
+                        <span class="text">المستخدمين</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="pages/roles.html">
+                    <a href="#">
                         <i class='bx bxs-user-badge'></i>
-                        <span class="text">Roles</span>
+                        <span class="text">الصلاحيات</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/rtl.html">
+                    <a href="../index.html">
                         <i class='bx bxs-home-heart'></i>
-                        <span class="text">RTL ar</span>
+                        <span class="text">LTR en</span>
                     </a>
                 </li>
             </ul>
@@ -60,13 +59,13 @@
                 <li>
                     <a href="#">
                         <i class='bx bxs-cog'></i>
-                        <span class="text">Settings</span>
+                        <span class="text">الإعدادات</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/login.html" class="logout">
+                    <a href="#" class="logout">
                         <i class='bx bxs-log-out-circle'></i>
-                        <span class="text">Logout</span>
+                        <span class="text">تسجيل خروج</span>
                     </a>
                 </li>
             </ul>
@@ -81,7 +80,7 @@
                 <i class='bx bx-menu'></i>
                 <form action="#">
                     <div class="form-input">
-                        <input type="search" placeholder="Search...">
+                        <input type="search" placeholder="بحث...">
                         <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
                     </div>
                 </form>
@@ -92,7 +91,7 @@
                     <span class="num">8</span>
                 </a>
                 <a href="#" class="profile">
-                    <img src="img/people.png">
+                    <img src="../img/people.png">
                 </a>
             </nav>
             <!-- NAVBAR -->
@@ -101,14 +100,14 @@
             <main>
                 <div class="head-title">
                     <div class="left">
-                        <h1>Dashboard</h1>
+                        <h1>الصفحة الرئيسية</h1>
                         <ul class="breadcrumb">
                             <li>
-                                <a href="#">Dashboard</a>
+                                <a href="#">لوحة التحكم </a>
                             </li>
-                            <li><i class='bx bx-chevron-right'></i></li>
+                            <li><i class='bx bx-chevron-left'></i></li>
                             <li>
-                                <a class="active" href="#">Home</a>
+                                <a class="active" href="#">الرئيسية</a>
                             </li>
                         </ul>
                     </div>
@@ -119,73 +118,72 @@
                         <i class='bx bxs-calendar-check'></i>
                         <span class="text">
                             <h3>20</h3>
-                            <p>New Order</p>
+                            <p>الطلبات الجديدة</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bxs-group'></i>
                         <span class="text">
                             <h3>280</h3>
-                            <p>Visitors</p>
+                            <p>الزوار</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bxs-dollar-circle'></i>
                         <span class="text">
                             <h3>$5000</h3>
-                            <p>Total Sales</p>
+                            <p>صافي الربح</p>
                         </span>
                     </li>
                 </ul>
 
 
-
                 <div class="table-data">
                     <div class="order">
                         <div class="head">
-                            <h3>Recent Orders</h3>
+                            <h3>الطلبات الحالية </h3>
                             <i class='bx bx-search'></i>
                             <i class='bx bx-filter'></i>
                         </div>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>User</th>
-                                    <th>Date Order</th>
-                                    <th>Status</th>
+                                    <th>المستخدم</th>
+                                    <th>تاريخ الطلب</th>
+                                    <th>حالة الطلب</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="img/people.png">
-                                        <p>hadeel</p>
+                                        <img src="../img/people.png">
+                                        <p>هديل</p>
                                     </td>
                                     <td>16-8-2022</td>
-                                    <td><span class="status completed">Completed</span></td>
+                                    <td><span class="status completed">مكتمل</span></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="img/people.png">
-                                        <p>hadeel</p>
+                                        <img src="../img/people.png">
+                                        <p>هديل</p>
                                     </td>
                                     <td>16-8-2022</td>
-                                    <td><span class="status pending">Pending</span></td>
+                                    <td><span class="status pending">معلق</span></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="img/people.png">
-                                        <p>hadeel</p>
+                                        <img src="../img/people.png">
+                                        <p>هديل</p>
                                     </td>
                                     <td>16-8-2022</td>
-                                    <td><span class="status process">Process</span></td>
+                                    <td><span class="status process">قيد العمل</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="todo">
                         <div class="head">
-                            <h3>Todos</h3>
+                            <h3>قائمة الاعمال</h3>
                             <i class='bx bx-plus'></i>
                             <i class='bx bx-filter'></i>
                         </div>
@@ -210,7 +208,8 @@
         </section>
         <!-- CONTENT -->
 
-        <script src="js/script.js"></script>
+
+        <script src="../js/script.js"></script>
     </body>
 
 </html>
