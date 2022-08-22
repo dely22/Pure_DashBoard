@@ -12,6 +12,17 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/chart.css">
         <title>My First Pure Dashboard</title>
+        <!-- Exports -->
+        <!-- pdf -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js">
+        </script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+        </script>
+        <!-- xls -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
     </head>
 
@@ -155,43 +166,66 @@
 
                 <div class="table-data">
                     <div class="order">
+                        <div class="btns" style="padding:.5rem;">
+                            <span class="Down" style="padding:.2rem; margin-inline-end: .2rem;">
+                                <i class='bx bxs-cloud-download'></i>
+                                <span class="text"> Export To </span>
+
+                            </span>
+                            <span class="btn-download">
+                                <a href="#"
+                                   style="color: var(--blue); padding: .2rem; border: var(--border); border-radius: var(--radius);">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="btnExport"> PDF </span>
+                                </a>
+                            </span>
+                            <span class="btn-download">
+                                <a href="#"
+                                   style="color: var(--blue); padding: .2rem; border: var(--border); border-radius: var(--radius);">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="Xls"> Xls </span>
+                                </a>
+                            </span>
+
+                        </div>
                         <div class="head">
                             <h3>Recent Orders</h3>
-                            <i class='bx bx-search'></i>
-                            <i class='bx bx-filter'></i>
+
+                            <!-- <i class='bx bx-search'></i>
+                            <i class='bx bx-filter'></i> -->
                         </div>
-                        <table>
+                        <table id="table">
                             <thead>
                                 <tr>
-                                    <th>User</th>
-                                    <th>Date Order</th>
-                                    <th>Status</th>
+                                    <th style="text-align: start;">User</th>
+                                    <th style="text-align: center;">Date Order</th>
+                                    <th style="text-align: center;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="img/people.png">
+                                        <!-- <img src="img/people.png" class="noExport"> -->
                                         <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status completed">Completed</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status completed">Completed</span></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="img/people.png">
+                                        <!-- <img src="img/people.png" class="noExport"> -->
                                         <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status pending">Pending</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status pending">Pending</span></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <img src="img/people.png">
+                                    <td style="text-align: center;">
+                                        <!-- <img src="img/people.png" class="noExport"> -->
                                         <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status process">Process</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status process">Process</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -228,6 +262,8 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
         <script src="js/chart.js"></script>
         <script src="js/jsonData.json"></script>
+        <!-- Export scripts -->
+        <script src="js/export.js"></script>
     </body>
 
 </html>
