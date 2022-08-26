@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link rel='stylesheet' href='../css/boxicons.min.css'>
+        <!-- My CSS -->
+        <link rel="stylesheet" href="../../css/respoTable.css">
+        <link rel="stylesheet" href="../../css/add.css">
+        <link rel="stylesheet" href="../../css/model.css">
+        <link rel="stylesheet" href="../../css/rtl.css">
+        <link rel='stylesheet' href="../../css/boxicons.min.css">
+        <!-- Exports -->
+        <!-- pdf -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js">
+        </script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+        </script>
+        <!-- xls -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <a href="#" class="brand">
+                <i class='bx bxs-magic-wand'></i>
+                <span class="text">أدمن هديل</span>
+            </a>
+            <ul class="side-menu top">
+                <li>
+                    <a href="../../index.html">
+                        <i class='bx bxs-dashboard'></i>
+                        <span class="text">لوحة التحكم</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addUser.html">
+                        <i class='bx bxs-cloud-download'></i>
+                        <span class="text">إضافة مستخدم</span>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="users.html">
+                        <i class='bx bxs-group'></i>
+                        <span class="text">المستخدمين</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="roles.html">
+                        <i class='bx bxs-user-badge'></i>
+                        <span class="text">الصلاحيات</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-menu">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-cog'></i>
+                        <span class="text">الإعدادات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="logout">
+                        <i class='bx bxs-log-out-circle'></i>
+                        <span class="text">تسجيل خروج</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- SIDEBAR -->
+
+
+        <!-- CONTENT -->
+        <section id="content">
+            <!-- NAVBAR -->
+            <nav>
+                <i class='bx bx-menu'></i>
+                <form action="#">
+                    <div class="form-input">
+                        <input type="search" placeholder="Search...">
+                        <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                    </div>
+                </form>
+                <input type="checkbox" id="switch-mode" hidden>
+                <label for="switch-mode" class="switch-mode"></label>
+                <a href="#" class="notification">
+                    <i class='bx bxs-bell'></i>
+                    <span class="num">8</span>
+                </a>
+                <a href="#" class="profile">
+                    <img src="../../img/people.png">
+                </a>
+            </nav>
+            <!-- NAVBAR -->
+
+            <!-- MAIN -->
+            <main>
+                <div class="head-title">
+                    <div class="left">
+                        <h1>المستخدمين</h1>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="#">الرئيسية</a>
+                            </li>
+                            <li><i class='bx bx-chevron-left'></i></li>
+                            <li>
+                                <a class="active" href="#">قائمة المستخدمين</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btns">
+                        <a href="addUser.html" class="btn-download">
+                            <i class='bx bxs-user-plus'></i>
+                            <span class="text">مستخدم جديد</span>
+                        </a>
+                    </div>
+                </div>
+                <section class="head-title" style="margin-top:.5rem;">
+                    <div class="responsive">
+                        <div class="btns" style="padding:.5rem;">
+                            <span class="Down" style="padding:.2rem; margin-inline-end: .2rem;">
+                                <i class='bx bxs-cloud-download'></i>
+                                <span class="text"> تصدير الى </span>
+
+                            </span>
+                            <span class="btn-download">
+                                <a href="#" style="color: #fff;">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="btnExport"> PDF </span>
+                                </a>
+                            </span>
+                            <span class="btn-download">
+                                <a href="#" style="color: #fff;">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="Xls"> Xls </span>
+                                </a>
+                            </span>
+
+                        </div>
+                    </div>
+                    <table class="responsive" id="table" class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>الايميل</th>
+                                <th>الصلاحية</th>
+                                <th>الحالة</th>
+                                <th class="noExport">عمليات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="#">1</td>
+                                <td data-label="name">هديل جميل</td>
+                                <td data-label="email">hadeel@gmail.com</td>
+                                <td data-label="role">مدير</td>
+                                <td data-label="state" class="active">نشط</td>
+                                <td data-label="actions" class="noExport">
+                                    <ul class="actions"
+                                        style="display: flex; justify-content: start; padding-inline-start: .3rem;">
+                                        <li> <a href="#" style="margin-inline-end:1.2rem ;" id="editbtn"><i
+                                                   class="bx bxs-edit"></i></a> </li>
+                                        <li> <a href="#"><i class="bx bxs-trash"></i></a> </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">2</td>
+                                <td data-label="name">Hadeel Jameel</td>
+                                <td data-label="email">hadeel@gmail.com</td>
+                                <td data-label="role">أدمن</td>
+                                <td data-label="state" class="active">نشط</td>
+                                <td data-label="actions" class="noExport">
+                                    <ul class="actions"
+                                        style="display: flex; justify-content: start; padding-inline-start: .3rem;">
+                                        <li> <a href="#" style="margin-inline-end:1.2rem ;" id="editbtn"><i
+                                                   class="bx bxs-edit"></i></a> </li>
+                                        <li> <a href="#"><i class="bx bxs-trash"></i></a> </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">2</td>
+                                <td data-label="name">Hadeel Jameel</td>
+                                <td data-label="email">hadeel@gmail.com</td>
+                                <td data-label="role">أدمن</td>
+                                <td data-label="state" class="active">نشط</td>
+                                <td data-label="actions" class="noExport">
+                                    <ul class="actions"
+                                        style="display: flex; justify-content: start; padding-inline-start: .3rem;">
+                                        <li> <a href="#" style="margin-inline-end:1.2rem ;" id="editbtn"><i
+                                                   class="bx bxs-edit"></i></a> </li>
+                                        <li> <a href="#"><i class="bx bxs-trash"></i></a> </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">2</td>
+                                <td data-label="name">Hadeel Jameel</td>
+                                <td data-label="email">hadeel@gmail.com</td>
+                                <td data-label="role">أدمن</td>
+                                <td data-label="state" class="active">نشط</td>
+                                <td data-label="actions" class="noExport">
+                                    <ul class="actions"
+                                        style="display: flex; justify-content: start; padding-inline-start: .3rem;">
+                                        <li> <a href="#" style="margin-inline-end:1.2rem ;" id="editbtn"><i
+                                                   class="bx bxs-edit"></i></a> </li>
+                                        <li> <a href="#"><i class="bx bxs-trash"></i></a> </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="#">2</td>
+                                <td data-label="name">Hadeel Jameel</td>
+                                <td data-label="email">hadeel@gmail.com</td>
+                                <td data-label="role">أدمن</td>
+                                <td data-label="state" class="active">نشط</td>
+                                <td data-label="actions" class="noExport">
+                                    <ul class="actions"
+                                        style="display: flex; justify-content: start; padding-inline-start: .3rem;">
+                                        <li> <a href="#" style="margin-inline-end:1.2rem ;" id="editbtn"><i
+                                                   class="bx bxs-edit"></i></a> </li>
+                                        <li> <a href="#"><i class="bx bxs-trash"></i></a> </li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <tfoot>
+
+                            <tr>
+                                <td class="noExport">
+                                    <div class="pagination" style="padding:.5rem;">
+                                        <a href="#">&laquo;</a>
+                                        <a href="#">1</a>
+                                        <a href="#" class="active">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">&raquo;</a>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>تعديل معلومات المستخدم</h2>
+                                <span class="close">&times;</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="head-title">
+                                        <!-- edit form -->
+                                        <form action="" class="inserto-form padd-15" autocomplete="on">
+                                            <div class="inserto-inputs">
+                                                <div class="inserto-content">
+                                                    <input type="text" class="inserto-input" required
+                                                           placeholder="hadeel jameel">
+                                                    <label for="" class="inserto-label"> اسم المستخدم</label>
+                                                    <span></span>
+                                                </div>
+                                                <div class="inserto-content">
+                                                    <input type="text" class="inserto-input" required
+                                                           placeholder="hadeel@gmail.com">
+                                                    <label for="" class="inserto-label"> ايميل المستخدم</label>
+                                                    <span></span>
+                                                </div>
+                                                <div class="inserto-content">
+                                                    <input type="password" class="inserto-input" required
+                                                           placeholder="12345">
+                                                    <label for="" class="inserto-label">كلمة السر</label>
+                                                    <span></span>
+                                                </div>
+                                                <div class="inserto-content drop">
+                                                    <select class="inserto-label">
+                                                        <option class="inserto-label" disabled selected>Select Role
+                                                        </option>
+                                                        <option class="inserto-label" selected>مدير</option>
+                                                        <option class="inserto-label">أدمن</option>
+                                                        <option class="inserto-label">مستخدم</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="btn btn-default"
+                                               style="width:100%;text-align: center;">حفظ</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+            <!-- MAIN -->
+        </section>
+        <!-- CONTENT -->
+
+        <!-- scripts -->
+        <script src="../../js/script.js"></script>
+        <!-- Export scripts -->
+        <script src="../../js/export.js"></script>
+    </body>
+
+</html>

@@ -39,13 +39,13 @@ table tbody tr:hover {
 
 table tbody tr td {
     padding: 0.4em 1em;
-    text-align: left;
+    text-align: start;
     color: var(--dark);
 
 }
 
 table tbody tr td.numeric {
-    text-align: right;
+    text-align: end;
 
 }
 
@@ -82,7 +82,7 @@ table tbody tr td ul.actions {}
 
     table tbody tr td {
         padding: 0.4em 1em;
-        text-align: right;
+        text-align: end;
 
         display: block;
 
@@ -103,7 +103,7 @@ table tbody tr td ul.actions {}
     }
 
     table tbody tr td.numeric {
-        text-align: left;
+        text-align: start;
 
     }
 
