@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
@@ -7,11 +7,22 @@
 
         <!-- Box icons -->
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-        <link rel='stylesheet' href='../css/boxicons.min.css'>
+        <link rel='stylesheet' href='css/boxicons.min.css'>
         <!-- My CSS -->
-        <link rel="stylesheet" href="css/rtl.css">
-        <link rel="stylesheet" href="css/chart.css">
-        <title>أول لوحة تحكم بيو لي</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/chart.css">
+        <title>My First Pure Dashboard</title>
+        <!-- Exports -->
+        <!-- pdf -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js">
+        </script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+        </script>
+        <!-- xls -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
     </head>
 
@@ -20,39 +31,39 @@
         <section id="sidebar">
             <a href="#" class="brand">
                 <i class='bx bxs-magic-wand'></i>
-                <span class="text">أدمن هديل</span>
+                <span class="text">Admin Hadeel</span>
             </a>
             <ul class="side-menu top">
                 <li class="active">
                     <a href="#">
                         <i class='bx bxs-dashboard'></i>
-                        <span class="text">لوحة التحكم</span>
+                        <span class="text">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/ar/addUser.html">
+                    <a href="addUser.html">
                         <i class='bx bxs-cloud-download'></i>
-                        <span class="text">اضافة مستخدم</span>
+                        <span class="text">Add User</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="pages/ar/users.html">
+                    <a href="users.html">
                         <i class='bx bxs-group'></i>
-                        <span class="text">المستخدمين</span>
+                        <span class="text">Users</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="pages/ar/roles.html">
+                    <a href="roles.html">
                         <i class='bx bxs-user-badge'></i>
-                        <span class="text">الصلاحيات</span>
+                        <span class="text">Roles</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/ltr.html">
+                    <a href="../index.html">
                         <i class='bx bxs-home-heart'></i>
-                        <span class="text">LTR en</span>
+                        <span class="text">RTL ar</span>
                     </a>
                 </li>
             </ul>
@@ -60,13 +71,13 @@
                 <li>
                     <a href="#">
                         <i class='bx bxs-cog'></i>
-                        <span class="text">الإعدادات</span>
+                        <span class="text">Settings</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pages/ar/login.html" class="logout">
+                    <a href="pages/login.html" class="logout">
                         <i class='bx bxs-log-out-circle'></i>
-                        <span class="text">تسجيل خروج</span>
+                        <span class="text">Logout</span>
                     </a>
                 </li>
             </ul>
@@ -81,7 +92,7 @@
                 <i class='bx bx-menu'></i>
                 <form action="#">
                     <div class="form-input">
-                        <input type="search" placeholder="بحث...">
+                        <input type="search" placeholder="Search...">
                         <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
                     </div>
                 </form>
@@ -101,14 +112,14 @@
             <main>
                 <div class="head-title">
                     <div class="left">
-                        <h1>الصفحة الرئيسية</h1>
+                        <h1>Dashboard</h1>
                         <ul class="breadcrumb">
                             <li>
-                                <a href="#">لوحة التحكم </a>
+                                <a href="#">Dashboard</a>
                             </li>
-                            <li><i class='bx bx-chevron-left'></i></li>
+                            <li><i class='bx bx-chevron-right'></i></li>
                             <li>
-                                <a class="active" href="#">الرئيسية</a>
+                                <a class="active" href="#">Home</a>
                             </li>
                         </ul>
                     </div>
@@ -119,83 +130,109 @@
                         <i class='bx bxs-calendar-check'></i>
                         <span class="text">
                             <h3>20</h3>
-                            <p>الطلبات الجديدة</p>
+                            <p>New Order</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bxs-group'></i>
                         <span class="text">
                             <h3>280</h3>
-                            <p>الزوار</p>
+                            <p>Visitors</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bxs-dollar-circle'></i>
                         <span class="text">
                             <h3>$5000</h3>
-                            <p>صافي الربح</p>
+                            <p>Total Sales</p>
                         </span>
                     </li>
                 </ul>
+
                 <!-- charts -->
                 <div class="table-data">
                     <div class="order">
-                        <div class="head" style="text-align: center;">
-                            <h3 style="text-align: center;">مبيعاتنا خلال السنوات </h3>
+                        <div class="head">
+                            <h3>Completed Orders History</h3>
                         </div>
                         <table>
                             <canvas id="canvas"></canvas>
                         </table>
                     </div>
-                </div>
+                    <!-- <div class="todo">
 
+                    </div> -->
+                </div>
 
                 <div class="table-data">
                     <div class="order">
-                        <div class="head">
-                            <h3>الطلبات الحالية </h3>
-                            <i class='bx bx-search'></i>
-                            <i class='bx bx-filter'></i>
+                        <div class="btns" style="padding:.5rem;">
+                            <span class="Down" style="padding:.2rem; margin-inline-end: .2rem;">
+                                <i class='bx bxs-cloud-download'></i>
+                                <span class="text"> Export To </span>
+
+                            </span>
+                            <span class="btn-download">
+                                <a href="#"
+                                   style="color: var(--blue); padding: .2rem; border: var(--border); border-radius: var(--radius);">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="btnExport"> PDF </span>
+                                </a>
+                            </span>
+                            <span class="btn-download">
+                                <a href="#"
+                                   style="color: var(--blue); padding: .2rem; border: var(--border); border-radius: var(--radius);">
+                                    <!-- <i class='bx bxs-cloud-download'></i> -->
+                                    <span class="text" id="Xls"> Xls </span>
+                                </a>
+                            </span>
+
                         </div>
-                        <table>
+                        <div class="head">
+                            <h3>Recent Orders</h3>
+
+                            <!-- <i class='bx bx-search'></i>
+                            <i class='bx bx-filter'></i> -->
+                        </div>
+                        <table id="table">
                             <thead>
                                 <tr>
-                                    <th>المستخدم</th>
-                                    <th>تاريخ الطلب</th>
-                                    <th>حالة الطلب</th>
+                                    <th style="text-align: start;">User</th>
+                                    <th style="text-align: center;">Date Order</th>
+                                    <th style="text-align: center;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="../img/people.png">
-                                        <p>هديل</p>
+                                        <!-- <img src="img/people.png" class="noExport"> -->
+                                        <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status completed">مكتمل</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status completed">Completed</span></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="../img/people.png">
-                                        <p>هديل</p>
+                                        <!-- <img src="img/people.png" class="noExport"> -->
+                                        <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status pending">معلق</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status pending">Pending</span></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <img src="../img/people.png">
-                                        <p>هديل</p>
+                                    <td style="text-align: center;">
+                                        <!-- <img src="img/people.png" class="noExport"> -->
+                                        <p>hadeel</p>
                                     </td>
-                                    <td>16-8-2022</td>
-                                    <td><span class="status process">قيد العمل</span></td>
+                                    <td style="text-align: center;">16-8-2022</td>
+                                    <td style="text-align: center;"><span class="status process">Process</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="todo">
                         <div class="head">
-                            <h3>قائمة الاعمال</h3>
+                            <h3>Todos</h3>
                             <i class='bx bx-plus'></i>
                             <i class='bx bx-filter'></i>
                         </div>
@@ -220,12 +257,13 @@
         </section>
         <!-- CONTENT -->
 
-        <script src="js/script.js"></script>
+        <script src="../js/script.js"></script>
         <!-- chart script -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-        <script src="js/chart.js"></script>
-        <script src="js/jsonData.json"></script>
-
+        <script src="../js/chart.js"></script>
+        <script src="../js/jsonData.json"></script>
+        <!-- Export scripts -->
+        <script src="../js/export.js"></script>
     </body>
 
 </html>
