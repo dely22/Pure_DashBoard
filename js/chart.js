@@ -1,6 +1,6 @@
 var xmlhttp = new XMLHttpRequest();
 var url = "/js/jsonData.json";
-// var url = "https://drive.google.com/file/d/1ctwfT0AEvL22MgQen1XbQXl5PJWBfKmE/view?usp=sharing";
+//var url = "http://127.0.0.1:5501/js/jsonData.json";
 
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
