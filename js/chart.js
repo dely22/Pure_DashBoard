@@ -1,5 +1,6 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "/js/jsonData.json";
+//var url = "/js/jsonData.json";
+var url = "https://dely22.github.io/Pure_DashBoard/js/jsonData.json";
 //var url = "http://127.0.0.1:5501/js/jsonData.json";
 
 xmlhttp.open("GET", url, true);
